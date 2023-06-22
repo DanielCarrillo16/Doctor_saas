@@ -25,7 +25,7 @@
           </a>
           <ul class="treeview-menu">
             <li class="<?= $uval; ?>"><a href="<?php echo base_url('admin/payment/settings/online') ?>"><i class='bx bx-right-arrow-alt' ></i><?php echo trans('payment-settings') ?> </a></li>
-            <li><a href="<?php echo base_url('admin/payment/settings/offline') ?>"><i class='bx bx-right-arrow-alt' ></i><?php echo trans('offline') ?> <?php echo trans('payments') ?></a></li>
+            <li><a href="<?php echo base_url('admin/payment/settings/offline') ?>"><i class='bx bx-right-arrow-alt' ></i><?php echo trans('payments') ?> <?php echo trans('offline') ?> </a></li>
           </ul>
         </li> 
 

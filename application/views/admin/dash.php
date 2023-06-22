@@ -5,6 +5,7 @@
     <!-- user dashboard area -->
     <?php if (isset($page_title) && $page_title == 'User Dashboard'): ?>
       <div class="row">
+        <?php if (check_my_payment_status() == TRUE): ?>
           <!-- Column -->
           <div class="col-lg-3 col-md-4" data-aos="fade-down" data-aos-duration="200">
               <a href="<?php echo base_url('admin/appointment/list/'.date('Y-m-d')) ?>">
@@ -76,6 +77,7 @@
               </a>
           </div>
           <!-- Column -->
+        <?php endif; ?>
       </div>
   
       <div class="row p-0 mt-20">

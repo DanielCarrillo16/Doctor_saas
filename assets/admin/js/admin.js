@@ -736,7 +736,7 @@ jQuery(function($) {
 
             swal({
               title: msg_are_you_sure,
-              text: 'I have checked and want to mark as verified for this account',
+              text: 'He verificado y quiero marcar como verificado para esta cuenta',
               type: "warning",
               showCancelButton: true,
               confirmButtonColor: "#28a745",

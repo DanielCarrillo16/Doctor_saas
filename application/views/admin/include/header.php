@@ -173,7 +173,7 @@
             <span class="sr-only">Toggle navigation</span>
           </a>
 
-          <?php if (is_staff() || is_user()): ?>
+          <?php if (is_staff() || is_user() && check_my_payment_status() == TRUE): ?>
             <div class="dropdown shortcut-menu mr-4 dnone-smss">
               <button type="button" class="btn btn-light-primary brd-20 dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-plus-circle"></i> <span class="dnone-sm"><?php echo trans('create-as-new') ?></span>
