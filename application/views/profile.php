@@ -230,7 +230,7 @@
 
                         <div class="form-group">
                             <label class="text-dark"><?php echo trans('date') ?> <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control datepicker" id="datepicker" name="date" autocomplete="off">
+                            <input type="date" class="form-control datepicker" id="datepicker" name="date" autocomplete="off">
                         </div>
 
                         <div class="form-group">
