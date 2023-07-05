@@ -49,7 +49,13 @@
 
         <li class="<?php if(isset($page_title) && $page_title == "Transactions"){echo "active";} ?>">
           <a href="<?php echo base_url('admin/payment/transactions') ?>">
-            <i class='bx bx-money-withdraw' ></i> <span class="adminm"><?php echo trans('transactions') ?></span>
+            <i class='bx bx-trending-up' ></i> <span class="adminm"><?php echo trans('transactions') ?></span>
+          </a>
+        </li>
+
+        <li class="<?php if(isset($page_title) && $page_title == "Expenses"){echo "active";} ?>">
+          <a href="<?php echo base_url('admin/payment/expenses') ?>">
+            <i class='bx bx-trending-down' ></i> <span class="adminm"><?php echo trans('expenses') ?></span>
           </a>
         </li>
 

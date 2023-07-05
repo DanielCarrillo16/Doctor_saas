@@ -62,6 +62,17 @@ class Payment extends Home_Controller {
         $this->load->view('admin/index',$data);
     }
 
+    //GASTOS
+
+    public function expenses()
+    {
+        $data = array();
+        $data['page_title'] = 'Expenses';
+        $data['expenses'] = $this->admin_model->get_expenses_lists(user()->id);
+        $data['main_content'] = $this->load->view('admin/expenses/index',$data,TRUE);
+        $this->load->view('admin/index',$data);
+    }
+
 
     //update settings
     public function update(){

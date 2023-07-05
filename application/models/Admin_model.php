@@ -1713,6 +1713,19 @@ class Admin_model extends CI_Model {
 
 
     // get_payment
+    function get_expenses_lists($user_id)
+    {
+        $this->db->select('e.*');
+        $this->db->from('expenses e');
+        $this->db->where('e.user_id = ', $user_id);
+        $this->db->order_by('e.id', 'DESC');
+        $query = $this->db->get();
+        $query = $query->result();  
+        return $query;
+    }
+
+
+    // get_payment
     function get_total_value($table, $date)
     {
         $this->db->select();
