@@ -162,6 +162,12 @@
             </li>
           <?php endif ?>
 
+          <li class="<?php if(isset($page_title) && $page_title == "Expenses"){echo "active";} ?>">
+            <a href="<?php echo base_url('admin/payment/expenses') ?>">
+              <i class='bx bx-trending-down' ></i> <span class="adminm"><?php echo trans('expenses') ?></span>
+            </a>
+          </li>
+
           <li class="<?php if(isset($page_title) && $page_title == "Department"){echo "active";} ?>">
             <a href="<?php echo base_url('admin/department') ?>">
               <i class='bx bx-spreadsheet' ></i> <span><?php echo trans('departments') ?></span>

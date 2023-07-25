@@ -259,8 +259,8 @@ class Auth extends Home_Controller
                         $chamber=array(
                             'user_id' => user()->id,
                             'uid' => $cuid,
-                            'title' => trans('chamber-title'),
-                            'name' => trans('chamber-name'),
+                            'title' => "Consultorio de ".$this->input->post('name', true),
+                            'name' => "Consultorio principal",
                             'is_primary' => 1,
                             'status' => 1,
                             'created_at' => my_date_now()

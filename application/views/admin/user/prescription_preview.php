@@ -142,7 +142,7 @@
                       <div class="second_value">
                          <?php for($j=0;$j<= count($value['time_periods']);$j++): ?>
                                 <p> 
-                                  <b><?=  $j==1 && !empty($value['time_periods'][1])?"<span class='then'> Then </span> ":'';?></b>
+                                  <b><?=  $j==1 && !empty($value['time_periods'][1])?"<span class='then'> Luego </span> ":'';?></b>
                                   
                                   <?php if (!empty($value['time_periods'][$j])): ?>
                                     <?php $vale = $value['time_periods'][$j]; ?>
@@ -150,7 +150,7 @@
                                   <?php endif ?>
                                   <?= !empty($value['medicine_time'][$j])?"( ".$value['medicine_time'][$j]." )":'';?>
                                   
-                                  <span><?= !empty($value['duration_text'][$j])?" --- ".$value['duration_text'][$j]:'   ';?>
+                                  <span><?= !empty($value['duration_text'][$j])?" por ".$value['duration_text'][$j]:'   ';?>
                                    <?= !empty($value['duration'][$j])?$value['duration'][$j]:'';?> </span>
                                 </p>
                                <p class="note_text"><?= !empty($value['note'][$j])?$value['note'][$j]:''?></p> 

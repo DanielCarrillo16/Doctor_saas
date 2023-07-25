@@ -73,6 +73,67 @@ class Payment extends Home_Controller {
         $this->load->view('admin/index',$data);
     }
 
+    public function add_expense()
+    {	
+        if($_POST)
+        {   
+            $id = $this->input->post('id', true);
+
+            //validate inputs
+            $this->form_validation->set_rules('concept', trans('concept'), 'required');
+            $this->form_validation->set_rules('description', trans('description'), 'required');
+            $this->form_validation->set_rules('amount', trans('amount'), 'required');
+            
+            if ($this->form_validation->run() === false) {
+                $this->session->set_flashdata('error', validation_errors());
+                redirect(base_url('admin/payment/expenses'));
+            } 
+            else {
+                if(user()->role == 'staff'){
+                    $user_id = user()->user_id;
+                }else{
+                    $user_id = user()->id;}
+                $data=array(
+                    'user_id' => $user_id,
+                    'amount' => $this->input->post('amount', true),
+                    'description' => $this->input->post('description', true),
+                    'concept' => $this->input->post('concept', true),
+                    'notes' => $this->input->post('notes', true),
+                    'created_at' => my_date_now(),
+                    'status' => "active",
+                );
+                $data = $this->security->xss_clean($data);
+                
+                //if id available info will be edited
+                if ($id != '') {
+                    $this->admin_model->edit_option($data, $id, 'expenses');
+                    $this->session->set_flashdata('msg', trans('updated-successfully')); 
+                } else {
+                    $id = $this->admin_model->insert($data, 'expenses');
+                    $this->session->set_flashdata('msg', trans('inserted-successfully')); 
+                }
+                redirect(base_url('admin/payment/expenses'));
+
+            }
+        }      
+        
+    }
+
+    public function edit_expense($id)
+    {  
+        $data = array();
+        $data['page_title'] = 'Edit';   
+        $data['expense'] = $this->admin_model->select_option($id, 'expenses');
+        $data['main_content'] = $this->load->view('admin/expenses/index',$data,TRUE);
+        $this->load->view('admin/index',$data);
+    }
+
+    public function delete_expense($id)
+    {
+        $this->admin_model->delete($id,'expenses'); 
+        echo json_encode(array('st' => 1));
+    }
+
 
     //update settings
     public function update(){
