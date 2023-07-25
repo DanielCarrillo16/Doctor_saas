@@ -84,8 +84,8 @@ class ComposerStaticInit2aa8ce484fa2d45d2429f09d5578b3eb
         ),
         'Doctrine\\Common\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
-            1 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
+            0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
+            1 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
         ),
         'DeepCopy\\' => 
         array (
@@ -93,8 +93,20 @@ class ComposerStaticInit2aa8ce484fa2d45d2429f09d5578b3eb
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'H' => 
+        array (
+            'HTTP_Request2' => 
+            array (
+                0 => __DIR__ . '/..' . '/pear/http_request2',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Net_URL2' => __DIR__ . '/..' . '/pear/net_url2/Net/URL2.php',
+        'PEAR_Exception' => __DIR__ . '/..' . '/pear/pear_exception/PEAR/Exception.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -102,6 +114,7 @@ class ComposerStaticInit2aa8ce484fa2d45d2429f09d5578b3eb
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit2aa8ce484fa2d45d2429f09d5578b3eb::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit2aa8ce484fa2d45d2429f09d5578b3eb::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit2aa8ce484fa2d45d2429f09d5578b3eb::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit2aa8ce484fa2d45d2429f09d5578b3eb::$classMap;
 
         }, null, ClassLoader::class);
