@@ -42,9 +42,9 @@
                 <?php if (number_format($user->amount, 0) != 0): ?>
                   <div class="box-header p-0">
                     <?php if (check_my_payment_status() == TRUE): ?>
-                      <h5 class="text-center pay_status"><?php echo trans('payment-status') ?>: &nbsp; <i class="ficon flaticon-check"></i> <?php echo ucfirst($user->status);?></h5>
+                      <h5 class="text-center pay_status"><?php echo trans('payment-status') ?>: &nbsp; <i class="ficon flaticon-check"></i> <?php echo ucfirst("Verificado");?></h5>
                       <?php else: ?>
-                        <h5 class="text-center pay_pending"><?php echo trans('payment-status') ?>: &nbsp; <i class="fa fa-exclamation-circle"></i> <?php echo ucfirst($user->status);?></h5>
+                        <h5 class="text-center pay_pending"><?php echo trans('payment-status') ?>: &nbsp; <i class="fa fa-exclamation-circle"></i> <?php echo ucfirst("Sin verificar");?></h5>
                       <?php endif ?>
                   </div>
                 <?php endif ?>

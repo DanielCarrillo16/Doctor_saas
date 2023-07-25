@@ -175,11 +175,11 @@
           </li>
 
           <?php if (check_feature_access('online-consultation') == TRUE): ?>
-          <li class="<?php if(isset($page_title) && $page_title == "Payment Settings"){echo "active";} ?> <?= $uval; ?>">
+          <!-- <li class="<?php if(isset($page_title) && $page_title == "Payment Settings"){echo "active";} ?> <?= $uval; ?>">
             <a href="<?php echo base_url('admin/payment/user') ?>">
               <i class='bx bx-dollar-circle' ></i> <span><?php echo trans('payment-settings') ?></span>
             </a>
-          </li>
+          </li> -->
 
           <li class="<?php if(isset($page_title) && $page_title == "Consultation Settings"){echo "active";} ?>">
             <a href="<?php echo base_url('admin/live_consults/settings') ?>">
@@ -280,7 +280,7 @@
             <ul class="treeview-menu">
               <li class="<?php if(isset($page_title) && $page_title == "Drugs"){echo "active";} ?>"><a href="<?php echo base_url('admin/drugs') ?>"><i class='bx bx-right-arrow-alt' ></i><?php echo trans('drugs') ?></a></li>
 
-              <li class="<?php if(isset($page_title) && $page_title == "Import"){echo "active";} ?>"><a href="<?php echo base_url('admin/file/import/drugs') ?>"><i class='bx bx-right-arrow-alt' ></i>Bulk Import Drugs</a></li>
+              <li class="<?php if(isset($page_title) && $page_title == "Import"){echo "active";} ?>"><a href="<?php echo base_url('admin/file/import/drugs') ?>"><i class='bx bx-right-arrow-alt' ></i>Importar medicamentos</a></li>
             </ul>
           </li> 
 
