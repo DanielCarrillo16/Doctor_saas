@@ -6,7 +6,7 @@ services:
             - "8001:80"
         volumes:
             - ./:/var/www/html/
-        links:
+        depends_on:
             - db
         networks:
             - default
