@@ -107,7 +107,7 @@
 
                         <?php $package_slug = $package->slug; $limit = get_feature_limit($all_feature->id)->$package_slug; ?>
 
-                        <div class="feature"><div class="pull-left mr-10"><?php if(isset($limit) && $limit > 0){echo html_escape($limit);}else{ echo '<b>&#8734;</b>';}; ?></div><?php echo trans($all_feature->slug) ?><span><i class="<?php echo html_escape($icon); ?>"></i></span></div>
+                        <div class="feature"><div class="pull-left mr-10"><?php if(isset($limit) && $limit > 0){echo html_escape($limit);}else{ echo '<b>&#8734;</b>';}; ?></div><?php echo html_escape($all_feature->name) ?><span><i class="<?php echo html_escape($icon); ?>"></i></span></div>
 
                       <?php endforeach ?>
                     <?php endif ?>
